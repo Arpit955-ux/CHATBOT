@@ -57,6 +57,16 @@ cd CHATBOT
 docker compose up --build
 ```
 
+Direct one-command run:
+- macOS/Linux:
+```bash
+./run.sh
+```
+- Windows:
+```bat
+run.bat
+```
+
 What happens:
 - Rasa container starts.
 - If no model exists, it runs `rasa train` automatically.

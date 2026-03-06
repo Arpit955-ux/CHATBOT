@@ -1,0 +1,3 @@
+@echo off
+echo Starting Quotes Recommendation Chatbot with Docker...
+docker compose up --build
