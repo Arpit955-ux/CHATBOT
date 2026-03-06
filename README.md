@@ -54,7 +54,7 @@ CHATBOT/
 ```bash
 git clone https://github.com/Arpit955-ux/CHATBOT.git
 cd CHATBOT
-docker compose up --build
+./run.sh
 ```
 
 Direct one-command run:
@@ -65,6 +65,11 @@ Direct one-command run:
 - Windows:
 ```bat
 run.bat
+```
+
+Manual alternative:
+```bash
+docker compose up --build
 ```
 
 What happens:
@@ -133,6 +138,9 @@ python app.py
 1. `Web page loads but bot gives no response`
 - Ensure Rasa service is running on port `5005`.
 - If using Docker, verify both containers are up: `docker compose ps`.
+- Check logs:
+  - `docker compose logs rasa`
+  - `docker compose logs web`
 
 2. `Port already in use`
 - Stop conflicting services or change mapped ports in `docker-compose.yml`.
@@ -141,6 +149,11 @@ python app.py
 - Delete old/broken files in `models/` and restart:
   - `docker compose down`
   - `docker compose up --build`
+
+4. `run.sh` / `run.bat` fails immediately
+- Start Docker Desktop first.
+- Wait until Docker is fully running.
+- Retry `./run.sh` (Linux/macOS) or `run.bat` (Windows).
 
 ## Future Enhancements
 - Emotion detection with sentiment models

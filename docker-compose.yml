@@ -3,11 +3,18 @@ services:
     image: rasa/rasa:3.6.20-full
     container_name: quotes-rasa
     working_dir: /app
+    user: "0:0"
     volumes:
       - ./:/app
-    command: ["./scripts/start_rasa.sh"]
+    entrypoint: ["/bin/sh", "/app/scripts/start_rasa.sh"]
     ports:
       - "5005:5005"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:5005/status', timeout=5)"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 60s
 
   web:
     build:
@@ -18,6 +25,7 @@ services:
       - RASA_URL=http://rasa:5005/webhooks/rest/webhook
       - FLASK_PORT=5000
     depends_on:
-      - rasa
+      rasa:
+        condition: service_healthy
     ports:
       - "5000:5000"
