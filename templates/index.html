@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quotes Recommendation Bot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero" id="hero-card">
+        <h1>Daily Inspiration</h1>
+        <p>
+          Your AI companion for motivation, love, humor, and success quotes.
+          Start chatting and get a quote instantly.
+        </p>
+        <button id="start-btn" type="button">Start Chatting</button>
+      </section>
+
+      <section class="chat-container hidden" id="chat-card">
+        <header class="chat-header">Quotes Bot</header>
+
+        <div class="chat-window" id="chat-window">
+          <div class="bot-message">
+            Hi, please tell me which quotes you want today
+            (Inspirational/Motivational/Success/Love/Funny).
+          </div>
+        </div>
+
+        <form id="chat-form" class="chat-input-row">
+          <input
+            id="message-input"
+            type="text"
+            placeholder="Type a message..."
+            autocomplete="off"
+            required
+          />
+          <button type="submit">Send</button>
+        </form>
+      </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>

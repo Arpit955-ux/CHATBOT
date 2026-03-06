@@ -1,0 +1,67 @@
+version: "3.1"
+
+rules:
+  - rule: Respond to greeting
+    steps:
+      - intent: greet
+      - action: utter_greet
+
+  - rule: Provide inspirational quote
+    steps:
+      - intent: inspiration
+      - action: utter_inspiration_intro
+      - action: utter_inspiration
+      - action: utter_helpful
+
+  - rule: Provide motivational quote
+    steps:
+      - intent: motivation
+      - action: utter_motivation_intro
+      - action: utter_motivation
+      - action: utter_helpful
+
+  - rule: Provide success quote
+    steps:
+      - intent: success
+      - action: utter_success_intro
+      - action: utter_success
+      - action: utter_helpful
+
+  - rule: Provide love quote
+    steps:
+      - intent: love
+      - action: utter_love_intro
+      - action: utter_love
+      - action: utter_helpful
+
+  - rule: Provide funny quote
+    steps:
+      - intent: funny
+      - action: utter_funny_intro
+      - action: utter_funny
+      - action: utter_helpful
+
+  - rule: Acknowledge satisfied feedback
+    steps:
+      - intent: satisfied
+      - action: utter_satisfied
+
+  - rule: Handle not satisfied feedback
+    steps:
+      - intent: not_satisfied
+      - action: utter_not_satisfied
+
+  - rule: Reply to thanks
+    steps:
+      - intent: thanks
+      - action: utter_thanks
+
+  - rule: Say goodbye
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - rule: Say i am a bot
+    steps:
+      - intent: bot_challenge
+      - action: utter_iamabot

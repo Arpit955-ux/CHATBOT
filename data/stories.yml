@@ -1,0 +1,39 @@
+version: "3.1"
+
+stories:
+  - story: inspiration flow with positive feedback
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: inspiration
+      - action: utter_inspiration_intro
+      - action: utter_inspiration
+      - action: utter_helpful
+      - intent: satisfied
+      - action: utter_satisfied
+
+  - story: motivation flow with retry
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: motivation
+      - action: utter_motivation_intro
+      - action: utter_motivation
+      - action: utter_helpful
+      - intent: not_satisfied
+      - action: utter_not_satisfied
+      - intent: success
+      - action: utter_success_intro
+      - action: utter_success
+      - action: utter_helpful
+
+  - story: love then thanks then goodbye
+    steps:
+      - intent: love
+      - action: utter_love_intro
+      - action: utter_love
+      - action: utter_helpful
+      - intent: thanks
+      - action: utter_thanks
+      - intent: goodbye
+      - action: utter_goodbye

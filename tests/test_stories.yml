@@ -1,0 +1,32 @@
+version: "3.1"
+
+stories:
+  - story: test inspiration happy path
+    steps:
+      - user: |
+          hello
+        intent: greet
+      - action: utter_greet
+      - user: |
+          inspire me
+        intent: inspiration
+      - action: utter_inspiration_intro
+      - action: utter_inspiration
+      - action: utter_helpful
+      - user: |
+          yes
+        intent: satisfied
+      - action: utter_satisfied
+
+  - story: test motivation retry path
+    steps:
+      - user: |
+          motivate me
+        intent: motivation
+      - action: utter_motivation_intro
+      - action: utter_motivation
+      - action: utter_helpful
+      - user: |
+          no
+        intent: not_satisfied
+      - action: utter_not_satisfied

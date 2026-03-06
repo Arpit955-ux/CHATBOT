@@ -1,0 +1,80 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - motivation
+  - inspiration
+  - love
+  - funny
+  - success
+  - satisfied
+  - not_satisfied
+  - thanks
+  - bot_challenge
+
+responses:
+  utter_greet:
+    - text: "Hey! Tell me what kind of quote you want today: inspirational, motivational, success, love, or funny."
+
+  utter_inspiration_intro:
+    - text: "Here is an inspirational quote for you:"
+
+  utter_inspiration:
+    - text: "Believe you can, and you're halfway there. - Theodore Roosevelt"
+    - text: "Act as if what you do makes a difference. It does. - William James"
+    - text: "Keep your face always toward the sunshine, and shadows will fall behind you. - Walt Whitman"
+
+  utter_motivation_intro:
+    - text: "Here is a motivational quote for you:"
+
+  utter_motivation:
+    - text: "Do something today that your future self will thank you for."
+    - text: "Success is the sum of small efforts, repeated day in and day out. - Robert Collier"
+    - text: "Great things never come from comfort zones."
+
+  utter_success_intro:
+    - text: "Here is a success quote for you:"
+
+  utter_success:
+    - text: "Success usually comes to those who are too busy to be looking for it. - Henry David Thoreau"
+    - text: "The road to success and the road to failure are almost exactly the same. - Colin R. Davis"
+    - text: "Don't watch the clock; do what it does. Keep going. - Sam Levenson"
+
+  utter_love_intro:
+    - text: "Here is a love quote for you:"
+
+  utter_love:
+    - text: "Love recognizes no barriers. - Maya Angelou"
+    - text: "Where there is love there is life. - Mahatma Gandhi"
+    - text: "To love and be loved is to feel the sun from both sides. - David Viscott"
+
+  utter_funny_intro:
+    - text: "Here is a funny quote for you:"
+
+  utter_funny:
+    - text: "I'm not arguing, I'm just explaining why I'm right."
+    - text: "People say nothing is impossible, but I do nothing every day. - A. A. Milne"
+    - text: "My bed is a magical place where I suddenly remember everything I forgot to do."
+
+  utter_helpful:
+    - text: "Was this helpful? Type 'yes' or 'no'."
+
+  utter_satisfied:
+    - text: "Thanks for your feedback. If you want more quotes, tell me the type again."
+
+  utter_not_satisfied:
+    - text: "No problem. Tell me another category: inspirational, motivational, success, love, or funny."
+
+  utter_thanks:
+    - text: "You're welcome. I am always here with more quotes."
+
+  utter_goodbye:
+    - text: "Bye. Stay positive and have a great day!"
+
+  utter_iamabot:
+    - text: "I am a Quotes Recommendation Bot powered by Rasa NLP."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

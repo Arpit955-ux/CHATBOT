@@ -1,0 +1,118 @@
+version: "3.1"
+
+nlu:
+  - intent: greet
+    examples: |
+      - hey
+      - hello
+      - hi
+      - hello there
+      - good morning
+      - good evening
+      - hey bot
+      - hi chatbot
+      - yo
+      - namaste
+
+  - intent: goodbye
+    examples: |
+      - bye
+      - goodbye
+      - see you later
+      - good night
+      - talk to you later
+      - see you
+      - catch you later
+      - i am leaving
+
+  - intent: inspiration
+    examples: |
+      - give me an inspirational quote
+      - i need inspiration
+      - inspire me
+      - share something inspirational
+      - inspirational quote please
+      - i want inspiration
+      - can you give me inspiration
+      - say something uplifting
+
+  - intent: motivation
+    examples: |
+      - give me motivation
+      - i need a motivational quote
+      - motivate me
+      - motivational quote please
+      - i feel low, motivate me
+      - i need some motivation
+      - can i get a motivation quote
+      - push me to work harder
+
+  - intent: success
+    examples: |
+      - give me a success quote
+      - i want success quotes
+      - quote about success
+      - success motivation please
+      - how to stay focused on success
+      - tell me something about success
+      - i need success inspiration
+
+  - intent: love
+    examples: |
+      - give me a love quote
+      - i want a romantic quote
+      - quote about love
+      - share a love line
+      - tell me something about love
+      - love quote please
+      - can i get a love quote
+
+  - intent: funny
+    examples: |
+      - tell me a funny quote
+      - make me laugh
+      - i want something funny
+      - give me humor
+      - funny quote please
+      - crack a joke quote
+      - i need a humorous line
+
+  - intent: satisfied
+    examples: |
+      - yes
+      - yeah
+      - yup
+      - that helped
+      - helpful
+      - i like it
+      - nice quote
+      - good one
+      - perfect
+
+  - intent: not_satisfied
+    examples: |
+      - no
+      - nope
+      - not really
+      - that did not help
+      - i do not like it
+      - give me another one
+      - not good
+      - bad quote
+
+  - intent: thanks
+    examples: |
+      - thanks
+      - thank you
+      - thanks a lot
+      - appreciate it
+      - your welcome
+      - you are great
+
+  - intent: bot_challenge
+    examples: |
+      - are you a bot?
+      - are you human?
+      - am i talking to a bot?
+      - who are you?
+      - what are you?

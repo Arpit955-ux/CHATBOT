@@ -1,0 +1,23 @@
+services:
+  rasa:
+    image: rasa/rasa:3.6.20-full
+    container_name: quotes-rasa
+    working_dir: /app
+    volumes:
+      - ./:/app
+    command: ["./scripts/start_rasa.sh"]
+    ports:
+      - "5005:5005"
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.web
+    container_name: quotes-web
+    environment:
+      - RASA_URL=http://rasa:5005/webhooks/rest/webhook
+      - FLASK_PORT=5000
+    depends_on:
+      - rasa
+    ports:
+      - "5000:5000"
