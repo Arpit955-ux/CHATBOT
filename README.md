@@ -9,7 +9,7 @@ If Docker is missing, `run.sh` / `run.bat` will automatically switch to local mo
 ## Features
 - Quote categories: Inspiration, Motivation, Success, Love, Funny
 - Conversational feedback flow (`yes` / `no`)
-- Web chat UI at `http://localhost:5000`
+- Web chat UI on localhost (default `http://localhost:5000`, auto-switches if busy)
 - Rasa API integration when available
 - Local fallback NLP so the app still runs if Rasa is unavailable
 
@@ -49,9 +49,9 @@ Windows:
 run.bat
 ```
 
-Open: [http://localhost:5000](http://localhost:5000)
-
-If port `5000` is busy, startup scripts now auto-select the next free port (for example `5001`) and print it in terminal.
+Open the URL printed in terminal.
+- Default: [http://localhost:5000](http://localhost:5000)
+- If `5000` is busy, scripts auto-select next free port (for example `5001` or `5002`)
 
 ## Mode Details
 
@@ -63,7 +63,7 @@ docker compose up --build
 ```
 
 Services:
-- Web UI: `http://localhost:5000`
+- Web UI: URL printed in terminal (default `http://localhost:5000`)
 - Rasa API: `http://localhost:5005`
 
 ### 2) Local NLP Mode (No Docker)
@@ -79,6 +79,16 @@ run_local.bat
 ```
 
 This mode uses built-in intent detection inside `app.py` and does not require Rasa.
+
+Custom local port:
+```bash
+FLASK_PORT=5050 ./run_local.sh
+```
+
+Custom Docker web port:
+```bash
+WEB_PORT=5050 ./run.sh
+```
 
 ## Prerequisites
 
@@ -107,6 +117,7 @@ lsof -i :5000
 kill -9 <PID>
 ```
 - Or just run `./run.sh` / `./run_local.sh`; they auto-pick a free port.
+- Always use the exact localhost URL shown in the startup logs.
 
 ## Optional Full Rasa Local Development
 If you specifically want local Rasa without Docker, install Rasa from official docs:
