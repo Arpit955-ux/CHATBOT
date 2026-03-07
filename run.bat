@@ -1,16 +1,19 @@
 @echo off
+cd /d "%~dp0"
 echo Starting Quotes Recommendation Chatbot with Docker...
 
 where docker >nul 2>nul
 if %errorlevel% neq 0 (
-  echo Error: Docker is not installed. Install Docker Desktop first.
-  exit /b 1
+  echo Docker not found. Switching to local NLP mode...
+  call "%~dp0run_local.bat"
+  exit /b %errorlevel%
 )
 
 docker info >nul 2>nul
 if %errorlevel% neq 0 (
-  echo Error: Docker daemon is not running. Start Docker Desktop and retry.
-  exit /b 1
+  echo Docker daemon is not running. Switching to local NLP mode...
+  call "%~dp0run_local.bat"
+  exit /b %errorlevel%
 )
 
 docker compose version >nul 2>nul
@@ -25,6 +28,6 @@ if %errorlevel% equ 0 (
   exit /b %errorlevel%
 )
 
-echo Error: Docker Compose is not available.
-echo Install Docker Compose plugin or docker-compose.
-exit /b 1
+echo Docker Compose is not available. Switching to local NLP mode...
+call "%~dp0run_local.bat"
+exit /b %errorlevel%
