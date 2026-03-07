@@ -51,6 +51,7 @@ run.bat
 
 Open the URL printed in terminal.
 - Default: [http://localhost:5000](http://localhost:5000)
+- Also valid on loopback: [http://127.0.0.1:5001](http://127.0.0.1:5001) (if script selected port `5001`)
 - If `5000` is busy, scripts auto-select next free port (for example `5001` or `5002`)
 
 ## Mode Details
