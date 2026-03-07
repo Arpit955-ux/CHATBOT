@@ -51,6 +51,8 @@ run.bat
 
 Open: [http://localhost:5000](http://localhost:5000)
 
+If port `5000` is busy, startup scripts now auto-select the next free port (for example `5001`) and print it in terminal.
+
 ## Mode Details
 
 ### 1) Docker + Rasa Mode
@@ -104,6 +106,7 @@ This mode uses built-in intent detection inside `app.py` and does not require Ra
 lsof -i :5000
 kill -9 <PID>
 ```
+- Or just run `./run.sh` / `./run_local.sh`; they auto-pick a free port.
 
 ## Optional Full Rasa Local Development
 If you specifically want local Rasa without Docker, install Rasa from official docs:
