@@ -144,3 +144,9 @@ Use a Personal Access Token (PAT) from the repo owner account and push again:
 git remote set-url origin https://<GITHUB_USERNAME>:<GITHUB_PAT>@github.com/Arpit955-ux/CHATBOT.git
 git push -u origin HEAD:main
 ```
+
+Or run:
+
+```bash
+./push_github.sh
+```
