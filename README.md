@@ -119,3 +119,28 @@ rasa run --enable-api --cors "*" --port 5005
 pip install -r requirements.txt
 python app.py
 ```
+
+## Publish To GitHub (Fixes `refspec` and auth errors)
+
+If you see:
+- `src refspec main does not match any`
+- `Permission denied ... 403`
+
+Run:
+
+```bash
+git add .
+git commit -m "Initial chatbot setup"
+git branch -M main
+git remote remove origin 2>/dev/null || true
+git remote add origin https://github.com/Arpit955-ux/CHATBOT.git
+git push -u origin HEAD:main
+```
+
+If push returns `403`, your current GitHub account does not have write access.
+Use a Personal Access Token (PAT) from the repo owner account and push again:
+
+```bash
+git remote set-url origin https://<GITHUB_USERNAME>:<GITHUB_PAT>@github.com/Arpit955-ux/CHATBOT.git
+git push -u origin HEAD:main
+```
